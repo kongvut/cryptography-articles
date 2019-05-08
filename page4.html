@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link href="images/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="15">
+  <tr>
+    <td align="right"><font size="+3"><strong>Symmetric Key Cryptography</strong></font></td>
+  </tr>
+  <tr>
+    <td><hr />
+    <p><strong>3. </strong><strong>Symmetric Key Cryptography</strong><br />
+         การเข้ารหัสโดยใช้กุญแจดอกเดียวเรียกว่า &quot;การเข้ารหัสแบบสมมาตร&quot; (symmetric Key Cryptography) เนื่องจากใช้ Key ตัวเดียวกันในการเข้ารหัสและถอดรหัส นอกจาก DES และ AES แล้วอัลกอริทึมในการเข้ารหัสแบบสมมาตรอย่างอื่นก็มีเช่น Blowfish และ IDEA แต่อาจจะไม่เป็นที่นิยมมากนัก การเข้ารหัสแบบสมมาตรถึงแม้จะใช้อัลกอริทึมที่แข็งแกร่งอย่าง AES และใช้ Key ที่มีความยาวตั้งแต่128 bit ขึ้นไปแล้วก็ยังมีข้อด้อยอยู่ตัวอย่างเช่น<br />
+- การส่ง Key ไปยังผู้รับเพื่อใช้ในการถอดรหัส หาก Key ถูกดักจับได้แล้วการเข้ารหัสก็จะไม่มีความหมายอะไรเลยเพราะผู้ดักฟังที่ดักจับได้ Key ไป ก็สามารถที่จะดักจับ Cipher Text แล้วถอดรหัสได้<br />
+- หากมีจำนวนผู้ใช้มากขึ้น ซึ่งผู้ใช้แต่ละคู่จะต้องใช้คีย์ที่แตกต่างจากคู่สื่อสารอื่น จะทำให้จำนวนคีย์ที่ต้องใช้ทั้งหมดมีจำนวนมากเช่น ผู้ใช้ N คนจะต้องใช้คีย์ทั้งหมดเท่ากับ N x (N-1) / 2<br />
+         <br />
+ด้วยข้อจำกัดเกี่ยวกับเรื่องการบริหารจัดการคีย์นี้ จึงได้มีมีการคิดค้น &quot;การเข้ารหัสแบบอสมมาตร&quot; ขึ้นมาซึ่งภาษาอังกฤษเรียกว่า Asymmetric Key Cryptography</p></td>
+  </tr>
+</table>
+</body>
+</html>

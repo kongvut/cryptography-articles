@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+body {
+	background-color: #FFF;
+}
+body,td,th {
+	font-family: Leelawadee;
+	font-size: 20px;
+}
+a:link {
+	color: #039;
+	text-decoration: underline;
+}
+a:visited {
+	text-decoration: underline;
+	color: #039;
+}
+a:hover {
+	text-decoration: none;
+	color: #06F;
+}
+a:active {
+	text-decoration: underline;
+}

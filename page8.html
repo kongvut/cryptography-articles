@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link href="images/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="15">
+  <tr>
+    <td align="right"><font size="+3"><strong><a name="up" id="up"></a>CA (Certificate Authority)</strong></font></td>
+  </tr>
+  <tr>
+    <td><hr />
+    <p><strong>7. </strong><strong>CA (Certificate Authority)</strong><br />
+         การใช้วิธีการเข้ารหัสแบบอสมมาตร (Asymmetric Key Cryptography) ที่จำเป็นจะต้องมีการแจกจ่าย Public Key ไปยังผู้ร่วมสื่อสารทุกๆรายนั้นมีจุดอ่อนจากการโจมตีแบบ MITM: Man In The Middle โดยแฮกเกอร์ จะทำตัวเป็นผู้อยู่ตรงกลางของการสื่อสารแล้วรอจังหวะที่ผู้สื่อสารข้อมูลมีการรับส่งและแลกเปลี่ยน Key กัน โดยแฮกเกอร์จะทำการส่ง Public Key ของแฮกเกอร์เองไปยังผู้รับ ดังนั้นแฮกเกอร์จึงสามารถที่จะปลอมแปลงข้อมูลได้โดยใช้ Private Key ของตนเองในการทำ Digital Signatures ทำให้ผู้รับหลงเชื่อคิดว่าข้อมูลนั้นถูกส่งมายังผู้ส่งจริง หรือบางครั้งแฮกเกอร์ก็ปลอมแปลงทั้ง Private Key และ Public Key<br />
+         ตัวอย่างของการโจมตี Asymmetric Key Cryptography โดยใช้วิธี MITM ที่เห็นได้บ่อยคือการถอดรหัสข้อมูลที่ส่งทาง https (เช่นรหัสผ่านของ hotmail, Gmail และเว็บไซต์ e-commerce อื่น ๆ) ด้วยโปรแกรมในชุดของ Backtrack หรือใช้โปรแกรม Cain โดยแฮกเกอร์จะดักรอขั้นตอนการส่ง Public Key ผ่านทาง https เมื่อ Public Key ของเว็บไซต์ (เช่น Hotmail) ถูกส่งมาถึงแฮกเกอร์ เขาจะทำการสร้าง Private Key และ Public Key ของตนเองขึ้นมา แล้วส่ง Public Key ไปให้เหยื่อ<br />
+         เมื่อเหยื่อต้องการส่งข้อมูลมายังเว็บไซต์ก็จะเข้ารหัสด้วย  Public Key ของเว็บไซต์เพื่อให้เว็บไซต์ถอดได้แต่เพียงผู้เดียว แต่ Public Key นั้นที่แท้จริงเป็น Public Key ของแฮกเกอร์ จึงทำให้แฮกเกอร์ถอดรหัสได้และได้ข้อมูลที่สำคัญ (เช่นรหัสผ่านหรือ Session Key ของโพรโทคอล https) แฮกเกอร์ที่มี Public Key ของเว็บไซต์อยู่แล้วก็จะเอาข้อมูลนั้นมาดำเนินการเข้ารหัสด้วย Public Key จริงของเว็บไซต์ และส่งให้เว็บเซิร์ฟเวอร์ต่อเพื่อให้การสื่อสารครบวงจรเพื่อที่เหยื่อจะได้ไม่รู้สึกถึงความผิดปกติ<br />
+         เพื่อแก้ไขปัญหาที่ผู้รับไม่สามารถที่จะตรวจสอบได้ว่า Public Key ที่ตนเองได้รับนั้นเป็นของผู้ส่งจริงหรือไม่ จึงได้มีการพัฒนาโครงสร้างพื้นฐานของ Asymmetric Key Cryptography ให้ปลอดภัยขึ้น เรียกว่า Public Key Infrastructure (PKI) โดยกำหนดให้มีหน่วยงานกลางเป็นผู้รับรอง Public Key ของแต่ละคน / เว็บไซต์ / เซิร์ฟเวอร์ หน่วยงานกลางดังกล่าวมีชื่อเรียกว่า CA (Certificate Authority)<br />
+         โดย CA จะได้รับการรับรองโดย Root CA อีกครั้งหนึ่ง ผู้รับส่งข้อมูลทุกรายจะต้องมี Public Key ของ Root CA ติดตั้งไว้บนระบบ เช่นบน Windows XP ก็จะมี Public Key ของ Root CA ทุกราย ซึ่งเราสามารถเปิดดู Public Key ของ Root CA ได้โดยใช้ Internet Explorer (เมนู Tools -&gt; Internet Options -&gt; Content -&gt; Certificates-&gt;Trusted Root Certification Authority)<br />
+         CA จะนำ Public Key ของผู้ส่ง (หรือผู้ใช้ / เว็บไซต์ ที่ขอให้ CA รับรอง) มารับรองด้วย Digital Signatures ของ CA (ทำการนำข้อมูลที่สำคัญเช่น  Public Key และชื่อเว็บไซต์ ของผู้ส่งมาแฮช แล้วเข้ารหัสด้วย Private Key ของ CA กลายเป็น Digital Signatures) แล้วนำข้อมูลต้นฉบับ (Public Key และชื่อเว็บไซต์) มาผนวกเข้ากับ Digital Signatures ดังกล่าว กลายเป็นสิ่งที่เรียกว่า Certificate<br />
+<br />
+    </p>
+    <p align="center"><strong>การรับรองเป็นลำดับชั้นของ </strong><strong>CA (Certificate Authority)</strong><br />
+      <strong><img width="539" height="182" src="images/clip_image002_0005.png" /></strong><strong> </strong></p>
+    <p>         ตัวอย่างเช่น Public Key ของเว็บไซต์ www.google.com ได้รับการรับรองโดย CA ชื่อ Thawte SGC ซึ่ง Thawte SGC ทำการรับรองโดยใช้ Certificate (มี Digital Signatures ที่รับรองโดย CA และมีข้อมูล Public Key และชื่อของเว็บไซต์ www.google.com อยู่ภายใน) ส่วน Thawte SGC ก็ถูกรับรองด้วย Certificate ที่ออกโดย Root CA ชื่อ VeriSign อีกทอดหนึ่งโดยใช้กลไกแบบเดียวกันกับที่ Thawte SGC รับรอง www.google.com<br />
+               บราวเซอร์สามารถใช้ Public Key ของ VeriSign (Root CA) ที่มีอยู่บน Windows ถอดรหัสทำให้แน่ใจได้ว่า Public Key ของ Thawte SGC เป็นของจริง และมั่นใจได้ว่า Public Key ของ www.google.com เป็นของจริงได้โดยใช้วิธีการในทำนองเดียวกัน<br /></p><p align="center">
+  <img width="503" height="376" src="images/clip_image004_0004.png" /> <br />
+  <strong>Certificate ของ www.google.com</strong></p>
+      <hr />
+    <p align="right"><a href="#up"><img src="images/btn_top.gif" width="48" height="43" border="0" /></a></p></td>
+  </tr>
+</table>
+</body>
+</html>

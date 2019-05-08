@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link href="images/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="15">
+  <tr>
+    <td align="right"><font size="+3"><strong>เทคโนโลยีการเข้ารหัสข้อมูล (Cryptography)</strong></font></td>
+  </tr>
+  <tr>
+    <td><hr />
+      <p><strong>Crypto</strong> ที่แปลว่า &quot;การซ่อน&quot; <br />
+      <strong>Graph</strong> ที่แปลว่า &quot;การเขียน&quot; <br />
+    </p>
+      <p>หากกล่าวถึงการเข้ารหัสและถอดรหัสมักจะได้ยินคำว่า “Cryptography” คำว่า Cryptography นี้มาจากคำว่า Crypto ที่แปลว่า “การซ่อน” ผนวกกับคำว่า Graph ที่แปลว่า “การเขียน” ดังนั้น Cryptography จึงมีความหมายว่า “การเขียนเพื่อซ่อนข้อมูล” โดยมีจุดประสงค์เพื่อป้องกันไม่ให้ผู้อื่นสามารถอ่านข้อมูลได้ ยกเว้นผู้ที่เราต้องการให้อ่านได้เท่านั้น ซึ่งผู้ที่เราต้องการให้อ่านได้จะต้องทราบวิธีการถอดรหัสข้อมูลที่ซ่อนไว้ หากแบ่ง Cryptography ตามยุคสมัยแล้วเราสามารถที่จะแบ่งได้เป็น 2 ยุคคือ ยุคประวัติศาสตร์ (หรือที่เรียกว่ายุค Classic) และยุคปัจจุบัน (Modern) กระบวนการของ Cryptography มี 2 อย่างคือ Data Encryption และ Data Decryption ซึ่งหมายถึงการเข้ารหัสข้อมูล และการถอดรหัสข้อมูลตามลำดับ ส่วนประโยชน์ของ Cryptography คือ การรักษาความลับของข้อมูล</p>
+      <p><strong>ศัพท์ต่างๆที่ควรทราบเกี่ยวกับการเข้าและถอดรหัส</strong><strong> </strong><br />
+        Plain Text หมายถึง ข้อความหรือข้อมูลต่างๆ ที่ยังไม่ผ่านกรรมวิธีการเข้ารหัส<br />
+        Cipher Text หมายถึง ข้อความ หรือข้อมูลต่างๆที่ผ่านการเข้ารหัสแล้ว และทำให้รูปแบบของข้อมูลเปลี่ยนแปลงไป<br />
+        Algorithm หมายถึง แนวความคิดหรือลำดับความคิดที่มี รูปแบบที่สามารถนำไปประมวลผลทางคอมพิวเตอร์ได้โดยง่าย<br />
+        Encryption หมายถึง กระบวนการหรือขั้นตอนในการเข้ารหัสข้อมูล ที่เปลี่ยนแปลงไปจากเดิม<br />
+        Decryption หมายถึง กระบวนการหรือขั้นตอนในการถอดรหัสข้อมูล เพื่อให้ข้อมูลที่เข้ารหัสไว้คืนสู่สภาพเดิมก่อนเข้ารหัส<br />
+        Key หมายถึง กุญแจที่ใช้ร่วมกับ อัลกอริทึมในการเข้ารหัส และถอดรหัส<br />
+        Cryptography หมายถึง ระบบการรักษาความปลอดภัยที่ประกอบ ด้วย Encryption และ Decryption<br />
+        Cryptanalysis หมายถึง การพยายามวิเคราะห์เพื่อศึกษาประเด็นต่างๆ ที่เกี่ยวข้องกับ Cryptography<br />
+        Sensitive Data หมายถึง ข้อมูลสำคัญที่ถือว่าเป็นความลับไม่สามารถแพร่งพรายออกสู่ภายนอกได้</p>
+      <p>กระบวนการของ Cryptography มี 2 อย่างคือ <br />
+        • Data Encryption : การเข้ารหัสข้อมูล <br />
+        • Data Decryption : การถอดรหัสข้อมูล<br />
+         Cryptography = <strong>Encryption + Decryption</strong> เพราะฉะนั้นประโยชน์ของ Cryptography คือการรักษาความลับของข้อมูล</p>
+      <p><strong>การแบ่งยุคของ </strong><strong>Cryptography </strong><br />
+        Cryptography สามารถแบ่งตามยุคสมัยได้เป็น 2 ยุคคือ <br />
+        • <a href="page2.html">ยุคประวัติศาสตร์ (หรือที่เรียกว่ายุค Classic) </a><br />
+    • <a href="page3.html">ยุคปัจจุบัน (Modern)</a></p>
+    <p>เนื้อหา</p>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td colspan="2">1. <a href="page2.html">การเข้ารหัสในยุค Classic</a></td>
+        </tr>
+      <tr>
+        <td width="4%">&nbsp;</td>
+        <td width="96%">1.1 <a href="page2.html#a">Caesar cipher</a><br />
+1.2 <a href="page2.html#b">Monoalphabetic ciphers</a><br />
+1.3 <a href="page2.html#c">Polyalphabetic Encryption</a><br />
+1.4 <a href="page2.html#d">One-Time Pad</a><br />
+1.5 <a href="page2.html#e">Playfair cipher</a></td>
+      </tr>
+      <tr>
+        <td colspan="2">2. <a href="page3.html">การเข้ารหัสในยุค Modern</a></td>
+        </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>2.1 <a href="page3.html#a">DES (Data Encryption Standard)</a><br />
+2.2 <a href="page3.html#b">Triple-DES (3DES)</a><br />
+2.3 <a href="page3.html#c">AES (Advance Encryption Standard)</a></td>
+      </tr>
+      <tr>
+        <td colspan="2">3. <a href="page4.html">Symmetric Key Cryptography</a></td>
+        </tr>
+      <tr>
+        <td colspan="2">4. <a href="page5.html">Asymmetric Key Cryptography</a><br /></td>
+        </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>4.1 <a href="page5.html#a">RSA</a><br />
+4.2 <a href="page5.html#b">ECC</a></td>
+      </tr>
+      <tr>
+        <td colspan="2">5. <a href="page6.html">Hash</a></td>
+        </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>5.1 <a href="page6.html#a">MD5</a><br />
+5.2 <a href="page6.html#b">SHA</a></td>
+      </tr>
+      <tr>
+        <td colspan="2">6. <a href="page7.html">Digital Signatures</a></td>
+        </tr>
+      <tr>
+        <td colspan="2">7. <a href="page8.html">CA (Certificate Authority)</a></td>
+        </tr>
+      <tr>
+        <td colspan="2">8. <a href="page9.html">การพิสูจน์ทราบตัวตน (Authentication)</a></td>
+        </tr>
+      <tr>
+        <td colspan="2">9. <a href="page10.html">โพรโทคอลในการพิสูจน์ตัวตน</a></td>
+        </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>9.1 <a href="page10.html#a">Secure Socket Layer (SSL)</a><br />
+9.2 <a href="page10.html#b">Secure Shell (SSH)</a><br />
+9.3 <a href="page10.html#c">Internet Protocol Security (IPsec)</a><br />
+9.4 <a href="page10.html#d">Kerberos</a></td>
+      </tr>
+    </table>
+   
+<hr />
+    <p><strong>ข้อมูลที่ใช้อ้างอิง เนื้อหาภายในเว็บไซต์ทั้งหมด</strong><br />
+      เทคโนโลยีการเข้ารหัส (Cryptography) สืบค้นเมื่อวันที่ 22 ธันวาคม, 2555, จาก<br />
+      - http://jwatchara.blogspot.com/2008/09/cryptography.html<br />
+      - http://beekie39.blogspot.com/2010/08/cryptography.html<br />
+      - http://www.oknation.net/blog/print.php?id=241138<br />
+      - http://www.ku.ac.th/e-magazine/august44/it/encryp.html<br />
+      - http://www.jobpub.com/articles/showarticle.asp?id=1858<br />
+      - http://www.martroutine.com/2011/01/-encryption/<br />
+    - http://www.martroutine.com/tag/cryptography/</p>
+    <hr />
+    <p><strong>ผู้จัดทำเว็บไซต์</strong> นายคงวุฒิ แสงกล้า รหัสนักศึกษา 5362110026 (24/12/2555)</p></td>
+  </tr>
+</table>
+</body>
+</html>
